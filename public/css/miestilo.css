@@ -1,0 +1,183 @@
+html{
+position:relative;
+min-height:100%;
+}
+.footer{
+position:absolute;
+bottom:0;
+min-width:100%;
+text-align:center;
+background:#cc6666;
+color:black;
+}
+h5{
+font-weight:bold;
+}
+.tipo{
+    font-family:Harrington;
+}
+h1{
+	font-size: 45px;
+}
+
+body{
+	background: #cccccc;
+}
+
+hr{
+	border: solid #ffffff 0.11em;
+}
+
+p{
+	font-weight: bold;
+	margin-top: -15px;
+	margin-bottom: -15px;
+}
+.tam{
+	width: 25%;
+	height: 25%;
+}
+.inp{
+	width: 30%;
+	border-radius: 2em;
+	margin-top: 2%;
+}
+input::-webkit-input-placeholder {
+    color:    #c00;
+    font-weight: bold;
+    text-align: center;
+}
+input::-moz-placeholder {
+    color:    #c00;
+    font-weight: bold;
+    text-align: center;
+}
+.but{
+border-radius: 2em;
+margin-top: 2%;
+width: 15%;
+background: #ffffff;
+}
+.centro{
+	width: 100%;
+	height: 100%;
+}
+.cen{
+margin-left:-95px;
+}
+.imagen{
+padding:20px;
+}
+.cerrar{
+margin-top:30px;
+background:#ffffff;
+border-radius:20px;
+padding:0px -10px;
+width:175px;
+}
+.cerrar:hover{
+background:#660000;
+color:#ffffff;
+}
+.imglogin{
+margin-left:-20px;
+}
+.letraslogin{
+font-size:12px;
+}
+.registro{
+margin-top:50px;
+margin-left:440px;
+}
+
+.registro2{
+margin-top:50px;
+margin-left:15px;
+}
+.datosdocentes{
+margin-left:400px;
+}
+.letra{
+padding:10px 20px;
+}
+.l1{
+margin-left:-10px;
+}
+.l2{
+margin-left:-40px;
+}
+.l22{
+margin-left:45px;
+}
+.l3{
+margin-left:10px;
+}
+.l4{
+margin-left:100px;
+}
+.l5{
+margin-left:65px;
+}
+.l6{
+margin-left:50px;
+}
+.sexo1{
+padding:5px 10px;
+margin-left:15px;
+}
+.sexo2{
+margin-left:55px;
+}
+.a1{
+margin-left:80px;
+}
+.a2{
+margin-left:10px;
+}
+.a3{
+margin-left:60px;
+}
+.a4{
+margin-left:180px;
+}
+.asi{
+margin-left:-5px;
+}
+.doc1{
+margin-left:135px;
+padding:20px 10px;
+}
+.doc2{
+margin-left:55px;
+}
+.nota1{
+margin-left:280px;
+margin-top:-90px;
+}
+.tbl{
+background:#cc6666;
+}
+.a{
+width:12%;
+max-width:12px;
+}
+.regis{
+color:#CD2424;
+}
+.tama{
+height:1px;
+}
+.centro1{
+	width: 125%;
+	height: 100%;
+	}
+.centrado{
+ width: 40%;
+margin-left:135px;
+margin-bottom:20px;
+}
+.centrado1{
+ width: 40%;
+margin-left:135px;
+margin-top:80px;
+}
