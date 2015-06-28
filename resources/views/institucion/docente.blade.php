@@ -31,72 +31,56 @@
 
 <div class="container">
 
-		<form class="Registronotas">
-		<div class="form-inline nota1" ><div class="btn-group"> <button type="button" class="btn btn-danger">  Grado  </button><button type="button" class="btn btn-danger dropdown-toggle"data-toggle="dropdown"><span class="caret"></span></button></div>  <div class="btn-group doc1"> <button type="button" class="btn btn-danger">  Grupo  </button><button type="button" class="btn btn-danger dropdown-toggle"data-toggle="dropdown"><span class="caret"></span></button></div>   <div class="btn-group doc1"> <button type="button" class="btn btn-danger">  Asignatura  </button><button type="button" class="btn btn-danger dropdown-toggle"data-toggle="dropdown"><span class="caret"></span></button></a></div></div>
-		</form>
+			{!! Form::open(array('action' => 'notascontroller@create','method'=>'get')) !!}
 		<table class="table">
 		<thead class="tbl">
 		<tr  >
-		<th class="text-center"><strong>ID </strong> </th>
-		<th  class="text-center"><strong>Nombre y Apellidos</strong> </th>
+		<th class="text-center"><strong>ID Alumno</strong> </th>
+		<th class="text-center">Asignatura</th>
 		<th class="text-center"><strong>Periodo I</strong> </th>
 		<th class="text-center"><strong>Periodo II</strong> </th>
 		<th class="text-center"><strong>Periodo III</strong> </th>
 		<th class="text-center"><strong>Periodo IV</strong> </th>
-		<th class="text-center"><strong>Nota Final</strong> </th>
 		</tr>
 		</thead>
 		<tr>
-		<th class="text-center">941031-09684</th>
-		<th >Sanchez Barrios Andres Mauricio</th> 
-		<th class="text-center a"><input type="text-center" placeholder=""> </th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		<th class="text-center a"><input type="text-center" placeholder=""> </th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		</tr>
-		<tr>
-		<th class="text-center">941031-09684</th>
-		<th >Salcedo Lugo Elkin David</th> 
-		<th class="text-center a"><input type="text-center" placeholder=""> </th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		<th class="text-center a"><input type="text-center" placeholder=""> </th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		<th class="text-center a"> <input type="text-center" placeholder=""> </th>
-		</tr>
-		<tr>
-		<th class="text-center">941031-09684</th>
-		<th >Eneon Alvarez Jose</th> 
-		<th class="text-center a"><input type="text-center" placeholder=""> </th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		<th class="text-center a"><input type="text-center" placeholder=""> </th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		<th class="text-center"><input type="text-center" placeholder=""></th>
-		</tr>
-		<tr>
-		<th class="text-center">....</th>
-		<th >....</th> 
-		<th class="text-center  a"> <input type="text-center" placeholder=""></th>
-		<th class="text-center  a"><input type="text-center" placeholder=""></th>
-		<th class="text-center  a"><input type="text-center" placeholder=""></th>
-		<th class="text-center  a"><input type="text-center" placeholder=""></th>
-		<th class="text-center  a"><input type="text-center" placeholder=""></th>
+		<th class="text-center"><label for="alumno"></label>
+		  <label for="alumno"></label>
+          
+		  <select name="alumno" id="alumno">
+ <?php foreach($alumnos as $alumnos) {
+$ida = $alumnos->id;
+$nom = $alumnos->nom;?>
+          <option value="<?=$ida?>"><?=$nom?></option>
+          <?php }?>
+	      </select></th>
+		<th class="text-center"><label for="asig"></label>
+		  <select name="asig" id="asig">
+          <?php foreach($asignaturas as $asignaturas) {
+$cod = $asignaturas->codigo;
+$asig = $asignaturas->asignatura;?>
+          <option value="<?=$cod?>"><?=$asig?></option>
+          <?php }?>
+	      </select></th>
+		<th class="text-center a"><input name="n1" type="number" id="n1" placeholder="" max="5" min="0"> </th>
+		<th class="text-center a"><input name="n2" type="number" id="n2" placeholder="" max="5" min="0"></th>
+		<th class="text-center a"><input name="n3" type="number" id="n3" placeholder="" max="5" min="0"></th>
+		<th class="text-center a"><input name="n4" type="number" id="n4" placeholder="" max="5" min="0"></th>
 		</tr>
 		<tbody>
-		</tbody>
+		  </tbody>
 
 		</table>
 		
 		<div class="registro2"><center>
-				<a href=""> <button  class="btn btn-default ver">Ver</button></a>
-				<a href="Inicioadministrador.html"> <button  class="btn btn-default regis">Cancelar</button></a>
-				<a href="RegistrarNotas.html"> <button type="submit" class="btn btn-default regis">Registrar</button> </a>
+				<button type="submit" class="btn btn-default regis">Registrar</button>
 				</center>
 				</div>
+				{!! Form::close() !!}
+                
 		
 </div>
-	
-	</div>
+
 	<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 </body>

@@ -1,32 +1,33 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
-
-Route::resource('admin','administradorController');
+Route::get('admin','administradorController@index');
 Route::resource('secretaria','secretariacontroller');
-Route::resource('docente','docentecontroller');
+Route::resource('docente','notascontroller');
 Route::resource('inicio','iniciocontroller');
 Route::resource('cargaacademica','cargacontroller');
 Route::resource('asignatura','asignaturacontroller');
-Route::resource('archivos','archivoscontroller');
+Route::get('archivos','archivoscontroller@index');
 Route::resource('restudiante','restudiantecontroller');
 Route::resource('rdocente','rdocentecontroller');
-Route::resource('actualizarnota','actualizarnotacontroller');
-Route::resource('actualizarasignatura','actualizarasignaturacontroller');
-Route::resource('actualizardocente','actualizardocentecontroller');
-Route::resource('actualizarestudiante','actualizarestudiantecontroller');
-
+Route::get('actualizarnota','notascontroller@show');
+Route::get('actualizarasignatura','asignaturacontroller@show');
+Route::get('actualizardocente','rdocentecontroller@show');
+Route::get('actualizarestudiante','restudiantecontroller@show');
+Route::get('rdocente2','rdocentecontroller@find');
+Route::get('deldocente/{id}','rdocentecontroller@destroy');
+Route::get('restudiante2','restudiantecontroller@find');
+Route::get('delestudiante/{id}','restudiantecontroller@destroy');
+Route::get('asignatura2','asignaturacontroller@find');
+Route::get('delasignatura/{id}','asignaturacontroller@destroy');
+Route::get('docente3/{id}','notascontroller@find2');
+Route::get('modnota','notascontroller@find');
+Route::get('carga','cargacontroller@find');
+Route::get('archig','archivoscontroller@index2');
+Route::get('archiva','archivoscontroller@alumno');
+Route::get('archido','archivoscontroller@docente');
+Route::get('home','HomeController@index');
+Route::get('dash-board','DashBoardController@index'); 
+Route::controller('/','Auth\AuthController');
 ?>

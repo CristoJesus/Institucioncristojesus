@@ -28,16 +28,26 @@
 
 	<div class="visible-lg visible-md visible-sm visible-xs" style="height:80px";></div>
 
-<div class="container-fluid cnt5">
+<div class="container-fluid">
 
-{!! Form::open(array('action' => 'rdocentecontroller@create','method'=>'get')) !!}
-
-<div class="form-inline" > <div class="form-group letra "> <label>*Nombre: </label><input name="nombre" type="text" required id="nombre" placeholder="Nombre"></div> <div class="form-group"> <label>*Direccion: </label><input name="dir" type="text" required id="dir" placeholder="Direccion"></div></div>
-			<div class="form-inline" > <div class="form-group letra l1"> <label>*Apellidos: </label><input name="ape" type="text" required id="ape" placeholder="Apellidos"></div> <div class="form-group"> <label>*Telefono: </label><input name="tel" type="text" required id="tel" placeholder="Telefono"></div> </div>
-			<div class="form-inline" > <div class="form-group letra l2"> <label>*Identificacion: </label><input name="id" type="text" required id="id" placeholder="Identificacion"></div> <div class="form-group"> <label>*F. Nacimiento: </label><input name="fecha" type="date" required id="fecha" placeholder="DD/MM/AA"></div> </div>
-			<div class="form-inline" > <div class="form-group letra l3"> <label>*Grado:</label><input name="grado" type="text" required id="grado" placeholder="Grado"></div> <label>*Sexo: </label>
+{!! Form::open(array('action' => 'rdocentecontroller@edit','method'=>'get')) !!}
+<?php 
+$id = $_GET['id'];
+$nomb = $_GET['nom'];
+$ape = $_GET['ape'];
+$dir = $_GET['dir'];
+$tel = $_GET['tel'];
+$sex = $_GET['sex'];
+$fecha = $_GET['fecha'];
+$grado = $_GET['grado'];
+?>
+<div class="form-inline" > <div class="form-group letra "> <label>*Nombre: </label><input name="nombre" type="text" required id="nombre" placeholder="Nombre" value="<?=$nomb?>"></div> <div class="form-group"> <label>*Direccion: </label><input name="dir" type="text" required id="dir" placeholder="Direccion" value="<?=$dir?>" ></div></div>
+			<div class="form-inline" > <div class="form-group letra l1"> <label>*Apellidos: </label><input name="ape" type="text" required id="ape" value="<?=$ape?>" placeholder="Apellidos"></div> <div class="form-group"> <label>*Telefono: </label><input name="tel" type="text" required id="tel" value="<?=$tel?>" placeholder="Telefono"></div> </div>
+			<div class="form-inline" > <div class="form-group letra l2"> <label>*Identificacion: </label><input name="id"  value="<?=$id?>" type="text" readonly id="id" placeholder="Identificacion"></div> <div class="form-group"> <label>*F. Nacimiento: </label><input name="fecha" type="date" required id="fecha" value="<?=$fecha?>" placeholder="DD/MM/AA"></div> </div>
+			<div class="form-inline" > <div class="form-group letra l3"> <label>*Grado:</label><input name="grado" type="text"  value="<?=$grado?>" required id="grado" placeholder="Grado"></div> <label>*Sexo: </label>
 			  <label for="sex"></label>
 			  <select name="sex" id="sex">
+			    <option value="<?=$sex?>"><?=$sex?></option>
 			    <option value="F">F</option>
 			    <option value="M">M</option>
 		      </select>
@@ -49,11 +59,7 @@
 				</div>
                 			{!! Form::close() !!}
 </div>
-
-<div class="cnt3">
-<a href="javascript:history.back()"> Volver Atrás</a> 
-</div>
-
+	
 	</div>
 	<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>

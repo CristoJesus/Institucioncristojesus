@@ -1,14 +1,18 @@
-<!DOCTYPE html>
+<?php
+header('Content-type: application/vnd.ms-excel');
+header("Content-Disposition: attachment; filename=Archivo_Grados.xls");
+header("Pragma: no-cache");
+header("Expires: 0");?><!DOCTYPE html>
 <html lang="en">
 <head>
 
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/miestilo.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/miestilo.css')}}">
 
-	<title>Registro Asignatura</title>
+	<title>Actualizar Docente</title>
 </head>
 <body>
 	<header class="row">
@@ -23,35 +27,45 @@
 
 	<div class="container-fluid">
 	<HR width=90% align="center"> 
-		<p class="text-center">Registro Asignatura</p>
+		<p class="text-center">Archivo Grado</p>
 			<HR width=90% align="center"> 
 
 	<div class="visible-lg visible-md visible-sm visible-xs" style="height:80px";></div>
 
 <div class="container-fluid">
-
-			{!! Form::open(array('action' => 'asignaturacontroller@create','method'=>'get')) !!}
-				<center>
-  <div class="input-group   inpu" style="text-align:center;">
-	<label >Asigantura</label>
-	<input name="asig" type="text"  required class="form-control " id="asig" placeholder="Nombre Asignatura">
-	</div>
-				<div class="input-group  inpu" style="text-align:center;">
-				<label>Codigo</label>
-				<input name="cod" type="text"  required class="form-control" id="cod" placeholder="Codigo Asignatura">
-				<center>
-				<div class="col-lg-4 registro"><center>
-				
-				<button type="submit" class="btn btn-default regis">Registrar</button>
-				</center>
-				</div>
-				{!! Form::close() !!}
-				</div>
-</div>
-	<div class="atras1">
-<a href="javascript:history.back()"> Volver Atrás</a> 
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td colspan="5"><div align="center">Archivo Alumnos</div></td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Alumno</td>
+      <td>Dir</td>
+      <td>Tel</td>
+      <td>Sex</td>
+    </tr>
+    <?php foreach($results1 as $results1) {
+$id = $results1->id;
+$nomb = $results1->nom;
+$ape = $results1->ape;
+$dir = $results1->dir;
+$tel = $results1->tel;
+$sex = $results1->sex;
+$fecha = $results1->fechan;
+$grado = $results1->grado;
+?>
+    <tr>
+      <td><?=$id?></td>
+      <td><?=$nomb." ".$ape?></td>
+      <td><?=$dir?></td>
+      <td><?=$tel?></td>
+      <td><?=$sex?></td>
+    </tr>
+    <?php } ?>
+  </table>
 </div>
 	
+	</div>
 	<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 </body>

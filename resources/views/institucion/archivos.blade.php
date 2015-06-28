@@ -37,22 +37,34 @@
 </div>
 <div class="container" >
 
-	<div class="col-lg-4"><input type="text" placeholder="Grupo" class="form-control centrado" ></div>
-	<div class="col-lg-4"><input type="text" placeholder="Estudiante" class="form-control centrado" ></div>
-	<div class="col-lg-4"><input type="text" placeholder="Docente" class="form-control centrado" ></div>
+	<div class="col-lg-4"></div>
+	<div class="col-lg-4"></div>
+	<div class="col-lg-4"></div>
 
 
 </div>
 <div class="container" >
-
-	<div class="col-lg-4"><button type="button" class="btn btn-danger centrado">Exportar</button></div>
-	<div class="col-lg-4"><button type="button" class="btn btn-danger centrado">Exportar</button></div>
-	<div class="col-lg-4"><button type="button" class="btn btn-danger centrado">Exportar</button></div>
+<div class="col-lg-4">
+    
+    
+   <a href="archig"><button type="submit" class="btn btn-danger centrado">Exportar</button></a>
+    
+		</div>
+	<div class="col-lg-4">
+   
+ <a href="archiva">    <button type="submit" class="btn btn-danger centrado">Exportar</button></a>
+   
+		</div>
+	<div class="col-lg-4">
+   
+ <a href="archido">    <button type="submit" class="btn btn-danger centrado">Exportar</button></a>
+   
+		</div>
 		
 </div>	
 <div class="container" >
 <div class="col-lg-4"></div>
-<div class="col-lg-4"><a href="inicioadministrador.html"><button type="button" class="centrado1 regis">Cancelar</button></a></div>
+<div class="col-lg-4"></div>
 <div class="col-lg-4"></div>
 </div>	
 

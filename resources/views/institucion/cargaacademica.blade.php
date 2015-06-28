@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/miestilo.css') }}">
-
 	<title>Carga Academica</title>
 </head>
 <body>
@@ -29,24 +27,50 @@
 	<div class="visible-lg visible-md visible-sm visible-xs" style="height:80px";></div>
 
 <div class="container-fluid">
+{!! Form::open(array('action' => 'cargacontroller@create','method'=>'get')) !!}
+<?php 
+$doce=$_GET['nom']." ".$_GET['ape'];
+$idd=$_GET['id'];
+$grad=$_GET['grado'];?>
+	<div class="form-inline" > <div class="form-group letra a1"> <label>*Docente: </label>
+			  <input name="docente" type="text" id="docente" placeholder="Nombre" value="<?=$doce?>">
+              <input type="hidden" name="idd" id="idd" value="<?=$idd?>">
+			</div>	  </div>
+			<div class="form-inline" > <div class="form-group letra a2"> <label>*Intensidad Horaria: </label><input name="inten" type="text" id="inten" placeholder="N° Horas Semanal"></div> 
+			</div>
+			<div class="form-inline" > <div class="form-group letra a3"> <label>*Asignatura: </label>
+			  <label for="asig"></label>
+			  <select name="asig" id="asig">
+<?php foreach($results as $results) {
+$codi = $results->codigo;
+$asi = $results->asignatura;
+?>  
+              <option value="<?=$codi?>"><?=$asi?></option>
+              <?php }?>
+		      </select>
+			</div> 
+			</div>
+			<div class="form-inline" > <div class="btn-group letra a4">
+            *Grado
+                <label for="grado"></label>
+                <input type="text" name="grado" id="grado" value="<?=$grad?>">
+			</div></div>
+			
 
-			<form class="datosdocentes">
-			<div class="form-inline" > <div class="form-group letra a1"> <label>*Docente: </label><input type="text" placeholder="Nombre"></div> </div>
-			<div class="form-inline" > <div class="form-group letra a2"> <label>*Intensidad Horaria: </label><input type="text" placeholder="N° Horas Semanal"></div> </div>
-			<div class="form-inline" > <div class="form-group letra a3"> <label>*Asignatura: </label><input type="text" placeholder="Nombre"></div> </div>
-			<div class="form-inline" > <div class="btn-group letra a4"> <button type="button" class="btn btn-danger">  Grado  </button><button type="button" class="btn btn-danger dropdown-toggle"data-toggle="dropdown"><span class="caret"></span></button></div></div>
 			
-			</form>
-			
-			<div class="registro2"><center>
-				<a href="iniciosecretaria.html"> <button  class="btn btn-default regis">Cancelar</button></a>
-				<a href="CargaAcademica.html"> <button type="submit" class="btn btn-default regis">Registrar</button> </a>
+			<div class="registro2">
+                <center>
+					 <button type="submit" class="btn btn-default regis">Registrar</button>
 				</center>
-				</div>
+			</div>
+                
+                {!! Form::close() !!}
 		
 </div>
 	
 	</div>
+
+	
 	<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 </body>

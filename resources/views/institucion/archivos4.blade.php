@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+header('Content-type: application/vnd.ms-excel');
+header("Content-Disposition: attachment; filename=Archivo_Grados.xls");
+header("Pragma: no-cache");
+header("Expires: 0");?><!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -8,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/miestilo.css')}}">
 
-	<title>Actualizar Asignatura</title>
+	<title>Actualizar Docente</title>
 </head>
 <body>
 	<header class="row">
@@ -23,20 +27,50 @@
 
 	<div class="container-fluid">
 	<HR width=90% align="center"> 
-		<p class="text-center">Actualizar Asignatura</p>
+		<p class="text-center">Archivo Grado</p>
 			<HR width=90% align="center"> 
 
 	<div class="visible-lg visible-md visible-sm visible-xs" style="height:80px";></div>
 
 <div class="container-fluid">
-
-			 <?php foreach($results as $results) {
-$id = $results->id;
-$cod = $results->codigo;
-$asig = $results->asignatura;
-
-?>       <h3><?= $cod." - ".$asig?></h3><a href="asignatura2?id=<?=$id?>&cod=<?=$cod?>&asig=<?=$asig?>">Modificar</a> <a href="delasignatura/<?=$id?>">Eliminar</a>  
-<?php }?>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td colspan="8"><div align="center">Archivo Docentes</div></td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Docente</td>
+      <td>Dir</td>
+      <td>Tel</td>
+      <td>Sex</td>
+      <td>Asignatura</td>
+      <td>Grado</td>
+      <td>Intensidad Horaria</td>
+    </tr>
+    <?php foreach($results1 as $results1) {
+$id = $results1->id;
+$nomb = $results1->nombre;
+$ape = $results1->ape;
+$dir = $results1->dir;
+$tel = $results1->tel;
+$sex = $results1->sex;
+$fecha = $results1->fecha;
+$grado = $results1->grado;
+$asignatura = $results1->asignatura;
+$intensidad = $results1->intensidad;
+?>
+    <tr>
+      <td><?=$id?></td>
+      <td><?=$nomb." ".$ape?></td>
+      <td><?=$dir?></td>
+      <td><?=$tel?></td>
+      <td><?=$sex?></td>
+      <td><?=$grado?></td>
+      <td><?=$asignatura?></td>
+      <td><?=$intensidad?></td>
+    </tr>
+    <?php } ?>
+  </table>
 </div>
 	
 	</div>

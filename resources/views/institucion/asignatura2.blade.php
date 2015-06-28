@@ -30,28 +30,31 @@
 
 <div class="container-fluid">
 
-			{!! Form::open(array('action' => 'asignaturacontroller@create','method'=>'get')) !!}
+			{!! Form::open(array('action' => 'asignaturacontroller@edit','method'=>'get')) !!}
+            
+            <?php 
+$id = $_GET['id'];
+$cod = $_GET['cod'];
+$asig = $_GET['asig'];
+?>
 				<center>
   <div class="input-group   inpu" style="text-align:center;">
 	<label >Asigantura</label>
-	<input name="asig" type="text"  required class="form-control " id="asig" placeholder="Nombre Asignatura">
+	<input name="asig" type="text"  required class="form-control " id="asig" value="<?=$asig?>" placeholder="Nombre Asignatura">
 	</div>
 				<div class="input-group  inpu" style="text-align:center;">
 				<label>Codigo</label>
-				<input name="cod" type="text"  required class="form-control" id="cod" placeholder="Codigo Asignatura">
+				<input name="cod" type="text" value="<?=$cod?>"  required class="form-control " id="cod" placeholder="Codigo Asignatura">
 				<center>
 				<div class="col-lg-4 registro"><center>
-				
+				<input type="hidden" name="id" id="id" value="<?=$id?>">
 				<button type="submit" class="btn btn-default regis">Registrar</button>
 				</center>
 				</div>
 				{!! Form::close() !!}
-				</div>
-</div>
-	<div class="atras1">
-<a href="javascript:history.back()"> Volver Atrás</a> 
 </div>
 	
+	</div>
 	<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 </body>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use DB;
 
 class administradorController extends Controller
 {
@@ -16,6 +17,7 @@ class administradorController extends Controller
      */
     public function index()
     {
+		
         return view('institucion.administrador');
     }
 
@@ -47,7 +49,10 @@ class administradorController extends Controller
      */
     public function show($id)
     {
-        //
+       $usu=DB::table('usu')->get();
+		dd($usu);
+        return view('institucion.administrador',compact('usu'));
+
     }
 
     /**

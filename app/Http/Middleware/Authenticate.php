@@ -1,19 +1,17 @@
-<?php
-
-namespace App\Http\Middleware;
-
+<?php namespace App\Http\Middleware;
+ 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
-
-class Authenticate
-{
+ 
+class Authenticate {
+ 
     /**
      * The Guard implementation.
      *
      * @var Guard
      */
     protected $auth;
-
+ 
     /**
      * Create a new filter instance.
      *
@@ -24,7 +22,7 @@ class Authenticate
     {
         $this->auth = $auth;
     }
-
+ 
     /**
      * Handle an incoming request.
      *
@@ -34,14 +32,19 @@ class Authenticate
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->guest()) {
-            if ($request->ajax()) {
+        if ($this->auth->guest())
+        {
+            if ($request->ajax())
+            {
                 return response('Unauthorized.', 401);
-            } else {
-                return redirect()->guest('auth/login');
+            }
+            else
+            {
+                return redirect()->guest('login');
             }
         }
-
+ 
         return $next($request);
     }
+ 
 }

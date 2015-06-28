@@ -8,7 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/miestilo.css') }}">
 
-	<title>Actualizar Notas</title>
+
+	<title>Registro Notas</title>
 </head>
 <body>
 	<header class="row">
@@ -23,75 +24,66 @@
 
 	<div class="container-fluid">
 	<HR width=90% align="center"> 
-		<p class="text-center">Actualizar Notas</p>
+		<p class="text-center">Registro De Notas</p>
 			<HR width=90% align="center"> 
 
 	<div class="visible-lg visible-md visible-sm visible-xs" style="height:80px";></div>
 
 <div class="container">
 
-		<form class="Registronotas">
-		<div class="form-inline nota1" ><div class="btn-group"> <button type="button" class="btn btn-danger">  Grado  </button><button type="button" class="btn btn-danger dropdown-toggle"data-toggle="dropdown"><span class="caret"></span></button></div>  <div class="btn-group doc1"> <button type="button" class="btn btn-danger">  Grupo  </button><button type="button" class="btn btn-danger dropdown-toggle"data-toggle="dropdown"><span class="caret"></span></button></div>   <div class="btn-group doc1"> <button type="button" class="btn btn-danger">  Asignatura  </button><button type="button" class="btn btn-danger dropdown-toggle"data-toggle="dropdown"><span class="caret"></span></button></a></div></div>
-		</form>
+			{!! Form::open(array('action' => 'notascontroller@create','method'=>'get')) !!}
+ <?php foreach($results as $results) {
+
+$id = $results->id;
+$nom = $results->nom;
+$ape = $results->ape;
+$grado = $results->grado;
+$asignatura = $results->asignatura;
+$n1 = $results->nota1;
+$n2 = $results->nota2;
+$n3 = $results->nota3;
+$n4 = $results->nota4;
+$fin = $results->final;
+$nasi = $results->nasi;
+}
+		  ?>
 		<table class="table">
 		<thead class="tbl">
 		<tr  >
-		<th class="text-center"><strong>ID </strong> </th>
-		<th  class="text-center"><strong>Nombre y Apellidos</strong> </th>
+		<th class="text-center"><strong>Alumno</strong> </th>
+		<th class="text-center">Asignatura</th>
 		<th class="text-center"><strong>Periodo I</strong> </th>
 		<th class="text-center"><strong>Periodo II</strong> </th>
 		<th class="text-center"><strong>Periodo III</strong> </th>
 		<th class="text-center"><strong>Periodo IV</strong> </th>
-		<th class="text-center"><strong>Nota Final</strong> </th>
+		<th class="text-center">Final</th>
+		<th class="text-center">&nbsp;</th>
 		</tr>
 		</thead>
 		<tr>
-		<th class="text-center">941031-09684</th>
-		<th >Sanchez Barrios Andres Mauricio</th> 
-		<th class="text-center a"><input type="text-center" placeholder=""> </th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		<th class="text-center a"><input type="text-center" placeholder=""> </th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		</tr>
-		<tr>
-		<th class="text-center">941031-09684</th>
-		<th >Salcedo Lugo Elkin David</th> 
-		<th class="text-center a"><input type="text-center" placeholder=""> </th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		<th class="text-center a"><input type="text-center" placeholder=""> </th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		<th class="text-center a"> <input type="text-center" placeholder=""> </th>
-		</tr>
-		<tr>
-		<th class="text-center">941031-09684</th>
-		<th >Eneon Alvarez Jose</th> 
-		<th class="text-center a"><input type="text-center" placeholder=""> </th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		<th class="text-center a"><input type="text-center" placeholder=""> </th>
-		<th class="text-center a"><input type="text-center" placeholder=""></th>
-		<th class="text-center"><input type="text-center" placeholder=""></th>
-		</tr>
-		<tr>
-		<th class="text-center">....</th>
-		<th >....</th> 
-		<th class="text-center  a"> <input type="text-center" placeholder=""></th>
-		<th class="text-center  a"><input type="text-center" placeholder=""></th>
-		<th class="text-center  a"><input type="text-center" placeholder=""></th>
-		<th class="text-center  a"><input type="text-center" placeholder=""></th>
-		<th class="text-center  a"><input type="text-center" placeholder=""></th>
+		<th class="text-center"><?=$nom." ".$ape?>
+
+	      </th>
+		<th class="text-center"><?=$nasi?>
+		  </th>
+		<th class="text-center a"><?=$n1?></th>
+		<th class="text-center a"><?=$n2?></th>
+		<th class="text-center a"><?=$n3?></th>
+		<th class="text-center a"><?=$n4?></th>
+		<th class="text-center a"><?=$fin?></th>
+		<th class="text-center a"><a href="modnota?id=<?=$id?>&n1=<?=$n1?>&n2=<?=$n2?>&n3=<?=$n3?>&n4=<?=$n4?>">Modificar</a></th>
 		</tr>
 		<tbody>
-		</tbody>
+		  </tbody>
 
 		</table>
 		
 		<div class="registro2"><center>
-				<a href=""> <button  class="btn btn-default ver">Ver</button></a>
-				<a href="inicioadministrador.html"> <button  class="btn btn-default regis">Cancelar</button></a>
-				<a href="RegistrarNotas.html"> <button type="submit" class="btn btn-default regis">Actualizar</button> </a>
+				<button type="submit" class="btn btn-default regis">Registrar</button>
 				</center>
 				</div>
+				{!! Form::close() !!}
+                
 		
 </div>
 	

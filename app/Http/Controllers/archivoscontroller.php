@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use DB;
 class archivoscontroller extends Controller
 {
     /**
@@ -16,7 +17,24 @@ class archivoscontroller extends Controller
      */
     public function index()
     {
-        return view('institucion.archivos');
+		        return view('institucion.archivos');
+    }
+
+     public function index2()
+    {
+		 $results1 = DB::select('select * FROM alumno WHERE grado=?',[1]);
+		 $results2 = DB::select('select * FROM alumno WHERE grado=?',[2]);
+		 $results3 = DB::select('select * FROM alumno WHERE grado=?',[3]);
+		 $results4 = DB::select('select * FROM alumno WHERE grado=?',[4]);
+		 $results5 = DB::select('select * FROM alumno WHERE grado=?',[5]);
+		 $results6 = DB::select('select * FROM alumno WHERE grado=?',[6]);
+		 $results7 = DB::select('select * FROM alumno WHERE grado=?',[7]);
+		 $results8 = DB::select('select * FROM alumno WHERE grado=?',[8]);
+		 $results9 = DB::select('select * FROM alumno WHERE grado=?',[9]);
+		 $results10 = DB::select('select * FROM alumno WHERE grado=?',[10]);
+		 $results11 = DB::select('select * FROM alumno WHERE grado=?',[11]);	 		 
+   
+		        return view('institucion.archivos2',['results1' => $results1,'results2' => $results2,'results3' => $results3,'results4' => $results4,'results5' => $results5,'results6' => $results6,'results7' => $results7,'results8' => $results8,'results9' => $results9,'results10' => $results10,'results11' => $results11]);
     }
 
     /**
@@ -24,9 +42,11 @@ class archivoscontroller extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function alumno()
     {
-        //
+      $results1 = DB::select('select * FROM alumno');
+   
+		        return view('institucion.archivos3',['results1' => $results1]);
     }
 
     /**
@@ -34,9 +54,11 @@ class archivoscontroller extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function docente()
     {
-        //
+          $results1 = DB::select('SELECT a.*,b.asignatura,c.intensidad FROM docente a,asignaturas b,carga c WHERE a.id=c.docente AND b.codigo=c.asignatura');
+   
+		        return view('institucion.archivos4',['results1' => $results1]);
     }
 
     /**
@@ -45,9 +67,9 @@ class archivoscontroller extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+return "";
     }
 
     /**

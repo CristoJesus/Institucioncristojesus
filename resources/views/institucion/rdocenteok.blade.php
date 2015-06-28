@@ -17,7 +17,7 @@
 		<div class="col-lg-8 text-center  tipo">
 			<h1>INSTITUCIÓN EDUCATIVA<BR>CRISTO JESUS</h1>
 		</div>
-		<div class="col-lg-2 cerrar"> <div class="col-lg-9"> <a href="inicio.html"><h4 class="letraslogin">Cerrar Sesion</h4> </div> <div class="col-lg-3"> <img class="imglogin" src="Images/login.png"  width="35" height="35"></a></div> </div>
+		<div class="col-lg-2 cerrar"> <div class="col-lg-9"> <a href="inicio"><h4 class="letraslogin">Cerrar Sesion</h4> </div> <div class="col-lg-3"> <img class="imglogin" src="Images/login.png"  width="35" height="35"></a></div> </div>
 
 	</header>
 
@@ -28,7 +28,7 @@
 
 	<div class="visible-lg visible-md visible-sm visible-xs" style="height:80px";></div>
 
-<div class="container-fluid cnt5">
+<div class="container-fluid cnt2">
 
 {!! Form::open(array('action' => 'rdocentecontroller@create','method'=>'get')) !!}
 
@@ -47,13 +47,12 @@
 				 <button type="submit" class="btn btn-default regis">Registrar</button>
 				</center>
 				</div>
-                			{!! Form::close() !!}
+                			{!! Form::close() !!} Registro exitoso!
 </div>
-
-<div class="cnt3">
+<div class="cnt6">
 <a href="javascript:history.back()"> Volver Atrás</a> 
 </div>
-
+	
 	</div>
 	<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>

@@ -76,13 +76,14 @@
 
 		<div class="col-lg-8 text-center">
 
-			<form action="">
+			{!! Form::open(array('action' => 'restudiantecontroller@create','method'=>'get')) !!}
+            
 				<center>
-				<div><input type="text" placeholder="Usuario" class="form-control inp" required></div>
-				<div class="form-group "><label for="ejemplo_password_1">Contraseña</label><input type="password" class="form-control inp" placeholder="Contraseña" required></div>
+				<div><input name="usu" type="text" required class="form-control inp" id="usu" placeholder="Usuario"></div>
+				<div class="form-group "><label for="ejemplo_password_1">Contraseña</label><input name="contra" type="password" required class="form-control inp" id="contra" placeholder="Contraseña"></div>
 				</center>
 				<center><button class="btn but" >Iniciar</button></center>
-			</form>
+			{!! Form::close() !!}
 
 		<div class="col-lg-2"></div>
 

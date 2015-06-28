@@ -29,10 +29,10 @@
 <div class="container">
 		
 		<div class="col-lg-2"></div>
-	<div class="col-lg-2"> <a href="registrodocente.html" ><img src="Images/rdocente.png" class="centro" height="1"></a> </div>
-	<div class="col-lg-2"> <a href="registroestudiantes.html" ><img src="Images/restudiante.png" class="centro" height="1"></a> </div>
-	<div class="col-lg-2"> <a href="Asignatura.html"><img src="Images/rasignatura.png" class="centro" height="1"></a> </div>
-	<div class="col-lg-2"> <a href=""><img src="Images/aarchivos.png" class="centro" id="tama"></a> </div>
+	<div class="col-lg-2"> <a href="rdocente" ><img src="Images/rdocente.png" class="centro" height="1"></a> </div>
+	<div class="col-lg-2"> <a href="restudiante" ><img src="Images/restudiante.png" class="centro" height="1"></a> </div>
+	<div class="col-lg-2"> <a href="asignatura" ><img src="Images/rasignatura.png" class="centro" height="1"></a> </div>
+	<div class="col-lg-2"> <a href="archivos"><img src="Images/aarchivos.png" class="centro" id="tama"></a> </div>
 		<div class="col-lg-2"></div>
 		
 </div>

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
+use DB;
 
 class asignaturacontroller extends Controller
 {
@@ -19,6 +20,11 @@ class asignaturacontroller extends Controller
         return view('institucion.asignatura');
     }
 
+public function find()
+    {
+        return view('institucion.asignatura2');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +32,10 @@ class asignaturacontroller extends Controller
      */
     public function create()
     {
-        //
+       $asig = Request::input('asig');
+       $cod = Request::input('cod');
+       $query=DB::insert('INSERT INTO asignaturas(id,asignatura,codigo) VALUES (NULL,?,?)', [$asig,$cod]);
+	    return redirect('admin');
     }
 
     /**
@@ -45,9 +54,11 @@ class asignaturacontroller extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $results = DB::select('select * from asignaturas');
+ 
+    return view('institucion.actualizarasignatura',['results' => $results]);
     }
 
     /**
@@ -56,9 +67,13 @@ class asignaturacontroller extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        $asig = Request::input('asig');
+       $cod = Request::input('cod');	   
+       $id = Request::input('id');
+       $query=DB::insert('UPDATE asignaturas SET asignatura=?,codigo=? WHERE id=?',[$asig,$cod,$id]);
+	    return redirect('admin');
     }
 
     /**
@@ -80,6 +95,8 @@ class asignaturacontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+       $query=DB::insert('DELETE FROM asignaturas WHERE id=?', [$id]);
+      
+	   return redirect('admin');
     }
 }

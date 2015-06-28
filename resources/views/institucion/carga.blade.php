@@ -5,10 +5,10 @@
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/miestilo.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/miestilo.css')}}">
 
-	<title>Registro Asignatura</title>
+	<title>Carga Academica</title>
 </head>
 <body>
 	<header class="row">
@@ -23,32 +23,30 @@
 
 	<div class="container-fluid">
 	<HR width=90% align="center"> 
-		<p class="text-center">Registro Asignatura</p>
+		<p class="text-center">Carga Academica</p>
 			<HR width=90% align="center"> 
 
 	<div class="visible-lg visible-md visible-sm visible-xs" style="height:80px";></div>
 
 <div class="container-fluid">
 
-			{!! Form::open(array('action' => 'asignaturacontroller@create','method'=>'get')) !!}
-				<center>
-  <div class="input-group   inpu" style="text-align:center;">
-	<label >Asigantura</label>
-	<input name="asig" type="text"  required class="form-control " id="asig" placeholder="Nombre Asignatura">
-	</div>
-				<div class="input-group  inpu" style="text-align:center;">
-				<label>Codigo</label>
-				<input name="cod" type="text"  required class="form-control" id="cod" placeholder="Codigo Asignatura">
-				<center>
-				<div class="col-lg-4 registro"><center>
-				
-				<button type="submit" class="btn btn-default regis">Registrar</button>
-				</center>
-				</div>
-				{!! Form::close() !!}
-				</div>
+			 <?php foreach($results as $results) {
+$id = $results->id;
+$nomb = $results->nombre;
+$ape = $results->ape;
+$dir = $results->dir;
+$tel = $results->tel;
+$sex = $results->sex;
+$fecha = $results->fecha;
+$grado = $results->grado;
+
+?>       <h3><?= $id." - ".$nomb." ".$ape?></h3><a href="carga?id=<?=$id?>&nom=<?=$nomb?>&ape=<?=$ape?>&grado=<?=$grado?>">Asignar</a> 
+<?php }?>
+		
 </div>
-	<div class="atras1">
+	
+	</div>
+<div class="atras3">
 <a href="javascript:history.back()"> Volver Atrás</a> 
 </div>
 	

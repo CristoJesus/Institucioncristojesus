@@ -52,12 +52,12 @@
 				<button type="submit" class="btn btn-default regis">Registrar</button>
 				</center>
 				</div>
-			{!! Form::close() !!}
+			{!! Form::close() !!} Registro Exitoso!!
 </div>
-<div class="cnt3">
+<div class="cnt4">
 <a href="javascript:history.back()"> Volver Atrás</a> 
-</div>
-			
+</div>			
+		
 </div>
 	
 	</div>

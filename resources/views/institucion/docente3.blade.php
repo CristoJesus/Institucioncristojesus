@@ -8,7 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/miestilo.css') }}">
 
-	<title>Registro Asignatura</title>
+
+	<title>Registro Notas</title>
 </head>
 <body>
 	<header class="row">
@@ -23,35 +24,51 @@
 
 	<div class="container-fluid">
 	<HR width=90% align="center"> 
-		<p class="text-center">Registro Asignatura</p>
+		<p class="text-center">Registro De Notas</p>
 			<HR width=90% align="center"> 
 
 	<div class="visible-lg visible-md visible-sm visible-xs" style="height:80px";></div>
 
-<div class="container-fluid">
+<div class="container">
 
-			{!! Form::open(array('action' => 'asignaturacontroller@create','method'=>'get')) !!}
-				<center>
-  <div class="input-group   inpu" style="text-align:center;">
-	<label >Asigantura</label>
-	<input name="asig" type="text"  required class="form-control " id="asig" placeholder="Nombre Asignatura">
-	</div>
-				<div class="input-group  inpu" style="text-align:center;">
-				<label>Codigo</label>
-				<input name="cod" type="text"  required class="form-control" id="cod" placeholder="Codigo Asignatura">
-				<center>
-				<div class="col-lg-4 registro"><center>
-				
-				<button type="submit" class="btn btn-default regis">Registrar</button>
-				</center>
-				</div>
-				{!! Form::close() !!}
-				</div>
-</div>
-	<div class="atras1">
-<a href="javascript:history.back()"> Volver Atrás</a> 
+		<form class="Registronotas">
+		<div class="form-inline nota1" ><div class="btn-group"></div></div>
+		</form>
+		<table class="table">
+		<thead class="tbl">
+		<tr  >
+		<th colspan="6" class="text-center"><strong>Grado</strong> </th>
+		</tr>
+		</thead>
+		<tr>
+		  <th class="text-center"><a href="docente3/1">1</a></th>
+		  <th class="text-center"><a href="docente3/2">2</a></th>
+		  <th class="text-center a"><a href="docente3/3">3</a></th>
+		  <th class="text-center a"><a href="docente3/4">4</a></th>
+		  <th class="text-center a"><a href="docente3/5">5</a></th>
+		  <th class="text-center a"><a href="docente3/6">6</a></th>
+		  </tr>
+		<tr>
+		  <th class="text-center"><a href="docente3/7">7</a></th>
+		  <th class="text-center"><a href="docente3/8">8</a></th>
+		  <th class="text-center a"><a href="docente3/9">9</a></th>
+		  <th class="text-center a"><a href="docente3/10">10</a></th>
+		  <th class="text-center a"><a href="docente3/11">11</a></th>
+		  <th class="text-center a"></th>
+		  </tr>
+		<tbody>
+		  </tbody>
+
+		</table>
+		
+	
+		
 </div>
 	
+	</div>
+<div class="atras2">
+<a href="javascript:history.back()"> Volver Atrás</a> 
+</div>
 	<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 </body>

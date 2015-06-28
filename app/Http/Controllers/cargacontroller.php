@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
+use DB;
 
 class cargacontroller extends Controller
 {
@@ -16,9 +17,16 @@ class cargacontroller extends Controller
      */
     public function index()
     {
-        return view('institucion.cargaacademica');
+		  $results = DB::select('select * from docente');
+ 
+        return view('institucion.carga',['results' => $results]);
     }
 
+    public function find()
+    {
+        $results = DB::select('select * from asignaturas');
+        return view('institucion.cargaacademica',['results'=>$results]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -26,8 +34,13 @@ class cargacontroller extends Controller
      */
     public function create()
     {
-        //
-    }
+       $idd = Request::input('idd');
+       $inten = Request::input('inten');
+       $asig = Request::input('asig');
+       $grado = Request::input('grado');
+       $query=DB::insert('INSERT INTO carga(id,docente,intensidad,asignatura) VALUES (NULL,?,?,?)',[$idd,$inten,$asig]);
+    return redirect('admin');
+	}
 
     /**
      * Store a newly created resource in storage.

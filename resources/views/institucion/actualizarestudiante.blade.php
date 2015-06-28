@@ -17,31 +17,29 @@
 		<div class="col-lg-8 text-center  tipo">
 			<h1>INSTITUCIÓN EDUCATIVA<BR>CRISTO JESUS</h1>
 		</div>
-		<div class="col-lg-2 cerrar"> <div class="col-lg-9"> <a href="inicio.html"><h4 class="letraslogin">Cerrar Sesion</h4> </div> <div class="col-lg-3"> <img class="imglogin" src="Images/login.png"  width="35" height="35"></a></div> </div>
+		<div class="col-lg-2 cerrar"> <div class="col-lg-9"><h4 class="letraslogin">Cerrar Sesion</h4> </div> <div class="col-lg-3"> <img class="imglogin" src="Images/login.png"  width="35" height="35"></div> </div>
 
 	</header>
 
 	<div class="container-fluid">
 	<HR width=90% align="center"> 
-		<p class="text-center">Actualizar Estudiante</p>
+		<h1 class="text-center">Actualizar Estudiante</h1>
 			<HR width=90% align="center"> 
+      <?php foreach($results as $results) {
+$id = $results->id;
+$nomb = $results->nom;
+$ape = $results->ape;
+$dir = $results->dir;
+$tel = $results->tel;
+$sex = $results->sex;
+$fecha = $results->fechan;
+$grado = $results->grado;
 
-	<div class="visible-lg visible-md visible-sm visible-xs" style="height:80px";></div>
-
-<div class="container-fluid">
-
-			<form class="datosdocentes">
-			<div class="form-inline" > <div class="form-group letra "> <label>*Nombre: </label><input type="text" placeholder="Nombre"></div> <div class="form-group"> <label>*Direccion: </label><input type="text" placeholder="Direccion"></div></div>
-			<div class="form-inline" > <div class="form-group letra l1"> <label>*Apellidos: </label><input type="text" placeholder="Apellidos"></div> <div class="form-group"> <label>*Telefono: </label><input type="text" placeholder="Telefono"></div> </div>
-			<div class="form-inline" > <div class="btn-group letra l22"> <button type="button" class="btn btn-danger">  Grado  </button><button type="button" class="btn btn-danger dropdown-toggle"data-toggle="dropdown"><span class="caret"></span></button></div><div class="btn-group"> <button type="button" class="btn btn-danger">  Grupo  </button><button type="button" class="btn btn-danger dropdown-toggle"data-toggle="dropdown"><span class="caret"></span></button></div></div>
-			
-			</form>
-			
-			<div class="registro2"><center>
-				<a href="iniciosecretaria.html"> <button  class="btn btn-default regis">Cancelar</button></a>
-				<a href="asignatura.html"> <button type="submit" class="btn btn-default regis">Actualizar</button> </a>
-				</center>
-				</div>
+?>       <h3><?= $id." - ".$nomb." ".$ape?></h3><a href="restudiante2?id=<?=$id?>&nom=<?=$nomb?>&ape=<?=$ape?>&dir=<?=$dir?>&tel=<?=$tel?>&sex=<?=$sex?>&fecha=<?=$fecha?>&grado=<?=$grado?>">Modificar</a> <a href="delestudiante/<?=$id?>">Eliminar</a>  
+<?php }?>
+      <div class="visible-lg visible-md visible-sm visible-xs" style="height:80px";></div>
+	<div class="container-fluid">
+	  <div class="registro2">	    </div>
 		
 </div>
 	

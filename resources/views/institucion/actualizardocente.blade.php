@@ -30,19 +30,18 @@
 
 <div class="container-fluid">
 
-			<form class="datosdocentes">
-			<div class="form-inline" ><div class="btn-group doc1"> <button type="button" class="btn btn-danger">  Docente  </button><button type="button" class="btn btn-danger dropdown-toggle"data-toggle="dropdown"><span class="caret"></span></button></div></div>
-			<div class="form-inline" >  <div class="form-group "> <label>*Direccion: </label><input type="text" placeholder="Direccion"></div><div class="form-group"> <label>*Telefono: </label><input type="text" placeholder="Telefono"></div> </div>
-			<div class="form-inline" > <div class="form-group letra "> <label>*Grado: </label><input type="text" placeholder="Grado"></div><div class="btn-group doc2"> <button type="button" class="btn btn-danger">  Asignatura  </button><button type="button" class="btn btn-danger dropdown-toggle"data-toggle="dropdown"><span class="caret"></span></button></div></div>
-			
-			
-			</form>
-			
-			<div class="registro2"><center>
-				<a href="iniciosecretaria.html"> <button  class="btn btn-default regis">Cancelar</button></a>
-				<a href="asignatura.html"> <button type="submit" class="btn btn-default regis">Registrar</button> </a>
-				</center>
-				</div>
+			 <?php foreach($results as $results) {
+$id = $results->id;
+$nomb = $results->nombre;
+$ape = $results->ape;
+$dir = $results->dir;
+$tel = $results->tel;
+$sex = $results->sex;
+$fecha = $results->fecha;
+$grado = $results->grado;
+
+?>       <h3><?= $id." - ".$nomb." ".$ape?></h3><a href="rdocente2?id=<?=$id?>&nom=<?=$nomb?>&ape=<?=$ape?>&dir=<?=$dir?>&tel=<?=$tel?>&sex=<?=$sex?>&fecha=<?=$fecha?>&grado=<?=$grado?>">Modificar</a> <a href="deldocente/<?=$id?>">Eliminar</a>  
+<?php }?>
 		
 </div>
 	

@@ -28,20 +28,20 @@
     </div>
 <div class="container">
 	<div class="col-lg-1"></div>
-	<div class="col-lg-2"> <a href="registrodocente.html" ><img src="Images/rdocente.png" class="centro" height="1"></a> </div>
-	<div class="col-lg-2"> <a href="registroestudiantes.html" ><img src="Images/restudiante.png" class="centro" height="1"></a> </div>
-	<div class="col-lg-2"> <a href="Asignatura.html" ><img src="Images/rasignatura.png" class="centro" height="1"></a> </div>
-	<div class="col-lg-2"> <a href="RegistrarNotas.html"><img src="Images/rnota.png" class="centro" id="tama"></a> </div>
-	<div class="col-lg-2"> <a href="ActualizarDocente.html"><img src="Images/carga.png" class="centro" id="tama"></a> </div>
+	<div class="col-lg-2"> <a href="rdocente" ><img src="Images/rdocente.png" class="centro" height="1"></a> </div>
+	<div class="col-lg-2"> <a href="restudiante" ><img src="Images/restudiante.png" class="centro" height="1"></a> </div>
+	<div class="col-lg-2"> <a href="asignatura" ><img src="Images/rasignatura.png" class="centro" height="1"></a> </div>
+	<div class="col-lg-2"> <a href="docente"><img src="Images/rnota.png" class="centro" id="tama"></a> </div>
+	<div class="col-lg-2"> <a href="cargaacademica"><img src="Images/carga.png" class="centro" id="tama"></a> </div>
 	<div class="col-lg-1"></div>
 </div>
 <div class="container">	
 	<div class="col-lg-1"></div>
-	<div class="col-lg-2"> <a href="registrodocente.html" ><img src="Images/adocente.png" class="centro" height="1"></a> </div>
-	<div class="col-lg-2"> <a href="registroestudiantes.html" ><img src="Images/aestudiantes.png" class="centro" height="1"></a> </div>
-	<div class="col-lg-2"> <a href="Asignatura.html" ><img src="Images/aasignatura.png" class="centro" height="1"></a> </div>
-	<div class="col-lg-2"> <a href="ActualizarNotas.html"><img src="Images/anotas.png" class="centro" id="tama"></a> </div>
-	<div class="col-lg-2"> <a href="Archivos.html"><img src="Images/aarchivos.png" class="centro" id="tama"></a> </div>
+	<div class="col-lg-2"> <a href="actualizardocente" ><img src="Images/adocente.png" class="centro" height="1"></a> </div>
+	<div class="col-lg-2"> <a href="actualizarestudiante" ><img src="Images/aestudiantes.png" class="centro" height="1"></a> </div>
+	<div class="col-lg-2"> <a href="actualizarasignatura" ><img src="Images/aasignatura.png" class="centro" height="1"></a> </div>
+	<div class="col-lg-2"> <a href="actualizarnota"><img src="Images/anotas.png" class="centro" id="tama"></a> </div>
+	<div class="col-lg-2"> <a href="archivos"><img src="Images/aarchivos.png" class="centro" id="tama"></a> </div>
 	<div class="col-lg-1"></div>
 	
 </div>

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use DB;
 class restudiantecontroller extends Controller
 {
     /**
@@ -19,6 +20,10 @@ class restudiantecontroller extends Controller
         return view('institucion.restudiante');
     }
 
+public function find()
+    {
+        return view('institucion.restudiante2');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +31,16 @@ class restudiantecontroller extends Controller
      */
     public function create()
     {
-        //
+       $name = Request::input('nombre');
+       $ape = Request::input('ape');
+       $id= Request::input('id');
+       $tel = Request::input('tel');
+       $dir = Request::input('dir');
+       $fecha= Request::input('fechan');
+       $grado = Request::input('grado');
+       $sex = Request::input('sex');
+       $query=DB::insert('INSERT INTO alumno (id,nom,ape,dir,tel,fechan,grado,sex) VALUES (?,?,?,?,?,?,?,?)', [$id,$name,$ape,$dir,$tel,$fecha,$grado,$sex]);
+	   return view('institucion.restudianteok');
     }
 
     /**
@@ -45,9 +59,11 @@ class restudiantecontroller extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+    $results = DB::select('select * from alumno');
+ 
+    return view('institucion.actualizarestudiante',['results' => $results]);
     }
 
     /**
@@ -56,9 +72,19 @@ class restudiantecontroller extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+       public function edit()
     {
-        //
+       $name = Request::input('nombre');
+       $ape = Request::input('ape');
+       $id= Request::input('id');
+       $tel = Request::input('tel');
+       $dir = Request::input('dir');
+       $fecha= Request::input('fechan');
+       $grado = Request::input('grado');
+       $sex = Request::input('sex');
+       $query=DB::insert('UPDATE alumno SET nom=?,ape=?,dir=?,tel=?,fechan=?,grado=?,sex=? WHERE id=?', [$name,$ape,$dir,$tel,$fecha,$grado,$sex,$id]);
+ 
+    return redirect('admin');
     }
 
     /**
@@ -78,8 +104,10 @@ class restudiantecontroller extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+     public function destroy($id)
     {
-        //
+        $query=DB::insert('DELETE FROM alumno WHERE id=?', [$id]);
+      
+	   return redirect('admin');
     }
 }
