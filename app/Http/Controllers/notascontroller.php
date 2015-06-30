@@ -15,6 +15,10 @@ class notascontroller extends Controller
      *
      * @return Response
      */
+	public function __construct ()
+	{
+		$this ->middleware('auth');
+	}
     public function index()
     {
         return view('institucion.docente3');

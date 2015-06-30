@@ -17,7 +17,7 @@
 		<div class="col-lg-8 text-center  tipo">
 			<h1>INSTITUCIÓN EDUCATIVA<BR>CRISTO JESUS</h1>
 		</div>
-		<div class="col-lg-2 cerrar"> <div class="col-lg-9"> <a href="inicio.html"><h4 class="letraslogin">Cerrar Sesion</h4> </div> <div class="col-lg-3"> <img class="imglogin" src="Images/login.png"  width="35" height="35"></a></div> </div>
+		<div class="col-lg-2 cerrar"> <div class="col-lg-9"><a href="inicio.html"><h4 class="letraslogin"> Cerrar Sesion</h4> </div> <div class="col-lg-3"> <img class="imglogin" src="Images/login.png"  width="35" height="35"></a></div> </div>
 
 	</header>
 
