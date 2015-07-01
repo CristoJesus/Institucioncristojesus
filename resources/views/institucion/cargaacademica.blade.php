@@ -26,7 +26,7 @@
 
 	<div class="visible-lg visible-md visible-sm visible-xs" style="height:80px";></div>
 
-<div class="container-fluid">
+<div class="container-fluid centroa">
 {!! Form::open(array('action' => 'cargacontroller@create','method'=>'get')) !!}
 <?php 
 $doce=$_GET['nom']." ".$_GET['ape'];
@@ -50,7 +50,7 @@ $asi = $results->asignatura;
 		      </select>
 			</div> 
 			</div>
-			<div class="form-inline" > <div class="btn-group letra a4">
+			<div class="form-inline centroa2" > <div class="btn-group letra a4">
             *Grado
                 <label for="grado"></label>
                 <input type="text" name="grado" id="grado" value="<?=$grad?>">
