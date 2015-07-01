@@ -70,7 +70,11 @@
 
 	<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
+
 </body>
+<div class="arc">
+<a href="javascript:history.back()"> Volver Atrás</a> 
+</div>
 </body>
 <footer class="footer">
 <h5>Copyright © Todos los derechos reservados Andres Sanchez & Elkin Salcedo & Jose Eneon</h5>
